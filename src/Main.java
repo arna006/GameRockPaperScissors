@@ -9,8 +9,7 @@ public class Main {
 
         while (true) {
             System.out.print("Skriv inn din trekk (stein, papir, saks eller avslutt): ");
-            String mittTrekk = scanner.nextLine().toLowerCase(); // Sikrer små bokstaver for sammenligning
-
+            String mittTrekk = scanner.nextLine().toLowerCase();
             if (mittTrekk.equals("avslutt")) {
                 System.out.println("Spill avsluttet.");
                 break;
@@ -28,6 +27,7 @@ public class Main {
 
             if (mittTrekk.equals(datatrekk)) {
                 System.out.println("Det ble likt!");
+
             } else if ((mittTrekk.equals("stein") && datatrekk.equals("saks")) ||
                     (mittTrekk.equals("saks") && datatrekk.equals("papir")) ||
                     (mittTrekk.equals("papir") && datatrekk.equals("stein"))) {
@@ -36,11 +36,12 @@ public class Main {
             } else {
                 System.out.println("Du tapte!");
                 antallTap++;
+
             }
 
             System.out.println("Resultat: Vinn - " + antallVinn + ", Tap - " + antallTap);
         }
-
+        // Sammendrag av resultat
         if (antallVinn > antallTap) {
             System.out.println("Gratulerer! Du vant flere runder enn du tapte!");
         } else if (antallTap > antallVinn) {
